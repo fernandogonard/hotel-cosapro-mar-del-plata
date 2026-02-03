@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: 
 
-Sitemap: https://cosapro.hoteldiva.netlify.app/sitemap.xml
+Sitemap: https://cosapro-hoteldiva.netlify.app/sitemap.xml
