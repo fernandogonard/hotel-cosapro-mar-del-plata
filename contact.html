@@ -281,6 +281,10 @@
     honeypot.style.display = 'none';
     document.getElementById('contactForm').appendChild(honeypot);
 
+    // Rate limiting: evitar envíos múltiples rápidos
+    let lastSubmitTime = 0;
+    const SUBMIT_COOLDOWN = 5000; // 5 segundos
+
     // Validación y envío
     document.getElementById('contactForm').addEventListener('submit', async (e) => {
       e.preventDefault();
@@ -289,11 +293,20 @@
       const submitBtn = document.getElementById('submitBtn');
       const formMessage = document.getElementById('formMessage');
       
-      // Anti-spam check
+      // Anti-spam check: honeypot
       if (honeypot.value !== '') {
-        console.warn('Spam detected');
+        console.warn('Spam detected: honeypot field filled');
         return;
       }
+
+      // Rate limiting: evitar spam de envíos
+      const now = Date.now();
+      if (now - lastSubmitTime < SUBMIT_COOLDOWN) {
+        formMessage.className = 'form-message error';
+        formMessage.textContent = '⏱️ Por favor, espera unos segundos antes de enviar otro mensaje.';
+        return;
+      }
+      lastSubmitTime = now;
 
       // Deshabilitar botón
       submitBtn.disabled = true;
