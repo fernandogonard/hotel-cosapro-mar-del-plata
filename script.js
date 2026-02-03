@@ -37,5 +37,59 @@ function openWhatsApp() {
 
 /* ================= NAV MOBILE ================= */
 function toggleMenu() {
-  document.getElementById("navLinks").classList.toggle("active");
+  const navLinks = document.getElementById("navLinks");
+  const navToggle = document.getElementById("navToggle");
+  navLinks.classList.toggle("active");
+  
+  // Actualizar aria-expanded
+  const isOpen = navLinks.classList.contains("active");
+  navToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
 }
+
+/* ================= EVENT LISTENERS ================= */
+document.addEventListener("DOMContentLoaded", () => {
+  // Nav Toggle
+  const navToggle = document.getElementById("navToggle");
+  if (navToggle) {
+    navToggle.addEventListener("click", toggleMenu);
+  }
+
+  // Cerrar menú al hacer click en un enlace
+  const navLinks = document.getElementById("navLinks");
+  const navAnchors = navLinks?.querySelectorAll("a");
+  navAnchors?.forEach(anchor => {
+    anchor.addEventListener("click", () => {
+      navLinks.classList.remove("active");
+      navToggle.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  // Botones WhatsApp
+  const whatsAppButtons = [
+    document.getElementById("navWhatsApp"),
+    document.getElementById("heroCTA"),
+    document.getElementById("ctaWhatsApp"),
+    ...document.querySelectorAll(".btn-consult")
+  ];
+
+  whatsAppButtons.forEach(button => {
+    if (button) {
+      button.addEventListener("click", openWhatsApp);
+    }
+  });
+
+  // Logo clickeable
+  const logoLink = document.querySelector(".nav-brand a");
+  if (logoLink) {
+    logoLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      // Cerrar menú móvil si está abierto
+      const navLinks = document.getElementById("navLinks");
+      if (navLinks?.classList.contains("active")) {
+        navLinks.classList.remove("active");
+        document.getElementById("navToggle").setAttribute("aria-expanded", "false");
+      }
+    });
+  }
+});

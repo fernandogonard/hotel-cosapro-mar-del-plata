@@ -21,6 +21,7 @@
   <meta property="og:type" content="website">
 
   <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 
   <!-- Schema Hotel -->
   <script type="application/ld+json">
@@ -70,17 +71,19 @@
   <div class="nav-container">
 
     <div class="nav-brand">
-      <img src="assets/logo-diva.png" alt="Hotel Diva Mar del Plata">
+      <a href="#" title="Hotel Diva - Ir al inicio">
+        <img src="assets/logo-diva.png" alt="Hotel Diva Mar del Plata">
+      </a>
     </div>
 
-    <button class="nav-toggle" aria-label="Abrir menú" onclick="toggleMenu()">☰</button>
+    <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" id="navToggle">☰</button>
 
     <ul class="nav-links" id="navLinks">
       <li><a href="#tarifas">Tarifas</a></li>
       <li><a href="#hotel">El Hotel</a></li>
       <li><a href="#ubicacion">Ubicación</a></li>
       <li>
-        <a href="#" class="nav-cta" aria-label="Consultar por WhatsApp" onclick="openWhatsApp()">WhatsApp</a>
+        <button class="nav-cta" aria-label="Consultar por WhatsApp" id="navWhatsApp">WhatsApp</button>
       </li>
     </ul>
 
@@ -104,9 +107,9 @@
       Hotel en Mar del Plata con tarifas especiales · Cupos limitados
     </p>
 
-    <a href="#" class="btn-primary" aria-label="Consultar alojamiento COSAPRO por WhatsApp" onclick="openWhatsApp()">
+    <button class="btn-primary" aria-label="Consultar alojamiento COSAPRO por WhatsApp" id="heroCTA">
       Consultar disponibilidad por WhatsApp
-    </a>
+    </button>
 
   </div>
 </header>
@@ -123,21 +126,21 @@
       <h3>2 noches</h3>
       <p class="price">$30.000</p>
       <span>por persona / noche</span>
-      <button onclick="openWhatsApp()">Consultar disponibilidad</button>
+      <button class="btn-consult">Consultar disponibilidad</button>
     </article>
 
     <article class="card destacado">
       <h3>3 noches</h3>
       <p class="price">$28.000</p>
       <span>por persona / noche</span>
-      <button onclick="openWhatsApp()">Consultar disponibilidad</button>
+      <button class="btn-consult">Consultar disponibilidad</button>
     </article>
 
     <article class="card">
       <h3>4 noches</h3>
       <p class="price">$27.000</p>
       <span>por persona / noche</span>
-      <button onclick="openWhatsApp()">Consultar disponibilidad</button>
+      <button class="btn-consult">Consultar disponibilidad</button>
     </article>
 
   </div>
@@ -194,9 +197,9 @@
   <h2>Cupos limitados durante el Congreso</h2>
   <p>Consultá ahora y asegurá tu alojamiento para COSAPRO 2026</p>
 
-  <a href="#" class="btn-primary" onclick="openWhatsApp()">
+  <button class="btn-primary" id="ctaWhatsApp">
     Escribir por WhatsApp
-  </a>
+  </button>
 </section>
 
 </main>
@@ -283,19 +286,7 @@
 </footer>
 
 <!-- ================= JS ================= -->
-<script>
-function openWhatsApp() {
-  const phone = "5492235033585";
-  const message = encodeURIComponent(
-    "Hola, soy asistente al Congreso Provincial de Salud COSAPRO 2026 y quiero consultar disponibilidad en el Hotel Diva."
-  );
-  window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
-}
-
-function toggleMenu() {
-  document.getElementById("navLinks").classList.toggle("active");
-}
-</script>
+<script src="script.js" defer></script>
 
 </body>
 </html>
