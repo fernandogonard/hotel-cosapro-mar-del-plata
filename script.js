@@ -74,7 +74,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   whatsAppButtons.forEach(button => {
     if (button) {
-      button.addEventListener("click", openWhatsApp);
+      button.addEventListener("click", (e) => {
+        // Evento de Analytics (si está configurado)
+        try { if (window.gtag) gtag('event', 'click_whatsapp', { 'event_category': 'engagement', 'event_label': button.id || 'btn-whatsapp' }); } catch(e){}
+        openWhatsApp(e);
+      });
     }
   });
 
