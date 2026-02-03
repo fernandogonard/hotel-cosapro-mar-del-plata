@@ -1,0 +1,355 @@
+/* ================= RESET ================= */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f7fb;
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+/* ================= NAVBAR ================= */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255,255,255,0.96);
+   box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav-brand img {
+  height: 46px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #0f172a;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+  color: #2563eb;
+}
+
+.nav-cta {
+  background: #2563eb;
+  color: #fff !important;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.nav-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* ================= HERO ================= */
+.hero {
+  min-height: 100vh;
+  background:
+    linear-gradient(
+      rgba(139,92,246,0.85),
+      rgba(236,72,153,0.85),
+      rgba(56,189,248,0.85)
+    ),
+    url("assets/hero.jpg") center / cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 20px 60px;
+}
+
+.hero-content {
+  max-width: 800px;
+  padding-inline: 12px;
+  color: #fff;
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 20px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+}
+
+/* ================= LOGOS ================= */
+.logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 22px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+.logos img {
+  max-height: 390px;
+  max-width: 100%;
+  width: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 10px rgba(0,0,0,0.15));
+}
+
+/* ================= BOTONES ================= */
+.btn-primary {
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: #fff;
+  padding: 14px 30px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-block;
+  box-shadow: 0 8px 22px rgba(37,99,235,0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card button {
+  margin-top: 20px;
+  width: 100%;
+  padding: 14px 18px;
+  border-radius: 999px;
+  border: none;
+  background: linear-gradient(135deg, #2563eb, #3b82f6);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(37,99,235,0.35);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, opacity 0.2s ease;
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(37,99,235,0.45);
+}
+
+.btn-secondary {
+  display: inline-block;
+  margin-top: 24px;
+  background: #fff;
+  color: #2563eb;
+  padding: 12px 26px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: 600;
+  border: 2px solid #2563eb;
+}
+
+
+/* ================= PROMOS ================= */
+.promos {
+  padding: 70px 20px;
+  background: #fff;
+  text-align: center;
+}
+
+.promos h2 {
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.promo-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.card {
+  background: linear-gradient(135deg, #eef2ff, #fdf2f8);
+  border-radius: 20px;
+  padding: 28px 20px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.18);
+}
+
+.card .price {
+  font-size: 2rem;
+  font-weight: 800;
+  color: #2563eb;
+}
+
+/* ================= HOTEL ================= */
+.hotel {
+  padding: 70px 20px;
+  background: #f4f7fb;
+  text-align: center;
+}
+
+.services {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+  gap: 15px;
+  max-width: 700px;
+  margin: auto;
+}
+
+.services li {
+  background: #fff;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+}
+
+/* ================= GALERIA ================= */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+  padding: 40px 16px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+.gallery img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+/* ================= UBICACION ================= */
+.location {
+  padding: 90px 20px;
+  background: linear-gradient(135deg, #e0f2fe, #fdf2f8);
+  text-align: center;
+}
+
+/* ================= CTA ================= */
+.cta {
+  padding: 100px 20px;
+  background: linear-gradient(135deg, #7c3aed, #ec4899);
+  color: #fff;
+  text-align: center;
+  position: relative;
+  z-index: 0;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  background: #0f172a;
+  color: #e5e7eb;
+  padding: 60px 20px 20px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.footer h3,
+.footer h4 {
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    flex-direction: column;
+    padding: 25px 0;
+    display: none;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hero {
+    min-height: auto;
+    padding: 120px 16px 60px;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    width: 100%;
+    max-width: 320px;
+  }
+
+  .gallery img {
+    height: 200px;
+  }
+
+  .logos img {
+    max-height: 270px;
+  }
+}
