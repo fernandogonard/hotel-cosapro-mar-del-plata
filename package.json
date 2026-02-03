@@ -1,0 +1,11 @@
+{
+  "name": "hotel-cosapro-optimizer",
+  "version": "1.0.0",
+  "description": "Optimizar imágenes a WebP",
+  "scripts": {
+    "optimize": "node scripts/optimize-images.js"
+  },
+  "dependencies": {
+    "sharp": "^0.33.0"
+  }
+}

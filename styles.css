@@ -85,7 +85,7 @@ body {
       rgba(236,72,153,0.85),
       rgba(56,189,248,0.85)
     ),
-    url("assets/hero.jpg") center / cover no-repeat;
+    url("assets/hero.webp") center / cover no-repeat;
   display: flex;
   align-items: center;
   justify-content: center;

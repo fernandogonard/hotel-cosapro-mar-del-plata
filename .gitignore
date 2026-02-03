@@ -1,0 +1,15 @@
+node_modules/
+npm-debug.log
+.DS_Store
+.env
+.env.local
+
+# Imágenes originales (mantener solo WebP)
+assets/*.jpg
+assets/*.png
+!assets/logo-diva.png
+!assets/logo-cosapro.png
+
+# Build files
+dist/
+build/
