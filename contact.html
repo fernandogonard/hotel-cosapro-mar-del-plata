@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contacto | Hotel Diva Mar del Plata - COSAPRO 2026</title>
+  <meta name="description" content="Formulario de contacto para consultas de alojamiento en Hotel Diva. Responde a tu mensaje en menos de 24 horas.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+  <style>
+    .contact-container {
+      max-width: 700px;
+      margin: 60px auto;
+      padding: 40px 20px;
+    }
+    .contact-card {
+      background: white;
+      border-radius: 8px;
+      padding: 40px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    .contact-card h1 {
+      color: #0f172a;
+      margin-bottom: 10px;
+      font-size: 2rem;
+    }
+    .contact-card > p {
+      color: #64748b;
+      margin-bottom: 30px;
+      font-size: 1rem;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      color: #0f172a;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      font-family: inherit;
+      font-size: 1rem;
+      transition: border-color 0.2s ease;
+    }
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #2563eb;
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+    }
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+    .form-group small {
+      display: block;
+      margin-top: 4px;
+      color: #94a3b8;
+      font-size: 0.85rem;
+    }
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .checkbox-group input[type="checkbox"] {
+      width: auto;
+      margin: 0;
+    }
+    .checkbox-group label {
+      margin: 0;
+      font-weight: 400;
+      font-size: 0.9rem;
+    }
+    .btn-submit {
+      background: #2563eb;
+      color: white;
+      padding: 12px 32px;
+      border: none;
+      border-radius: 6px;
+      font-weight: 600;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.2s ease;
+      width: 100%;
+    }
+    .btn-submit:hover:not(:disabled) {
+      background: #1d4ed8;
+    }
+    .btn-submit:disabled {
+      background: #cbd5e1;
+      cursor: not-allowed;
+    }
+    .form-message {
+      padding: 12px 14px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      display: none;
+    }
+    .form-message.success {
+      background: #dcfce7;
+      color: #166534;
+      border: 1px solid #86efac;
+      display: block;
+    }
+    .form-message.error {
+      background: #fee2e2;
+      color: #991b1b;
+      border: 1px solid #fca5a5;
+      display: block;
+    }
+    .back-link {
+      display: inline-block;
+      margin-bottom: 20px;
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+    .contact-info {
+      background: #f0f4f8;
+      border-left: 4px solid #2563eb;
+      padding: 20px;
+      border-radius: 6px;
+      margin-top: 30px;
+    }
+    .contact-info h3 {
+      color: #0f172a;
+      margin-bottom: 12px;
+      font-size: 1rem;
+    }
+    .contact-info p {
+      color: #475569;
+      margin: 8px 0;
+      font-size: 0.95rem;
+    }
+    .contact-info a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="contact-container">
+    <a href="/" class="back-link">← Volver al inicio</a>
+    
+    <div class="contact-card">
+      <h1>Contáctanos</h1>
+      <p>¿Preguntas sobre disponibilidad o servicios? Completa el formulario y nos pondremos en contacto en menos de 24 horas.</p>
+
+      <div class="form-message" id="formMessage"></div>
+
+      <form id="contactForm">
+        <div class="form-group">
+          <label for="nombre">Nombre completo *</label>
+          <input 
+            type="text" 
+            id="nombre" 
+            name="nombre" 
+            required 
+            placeholder="Tu nombre"
+            minlength="3"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            required 
+            placeholder="tu@email.com"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="telefono">Teléfono (con WhatsApp)</label>
+          <input 
+            type="tel" 
+            id="telefono" 
+            name="telefono" 
+            placeholder="+54 9 2235 ..."
+            pattern="[0-9\s\-\+]+"
+          >
+        </div>
+
+        <div class="form-group">
+          <label for="asunto">Asunto *</label>
+          <select id="asunto" name="asunto" required>
+            <option value="">-- Selecciona un asunto --</option>
+            <option value="Consulta de disponibilidad">Consulta de disponibilidad</option>
+            <option value="Tarifas y promociones">Tarifas y promociones</option>
+            <option value="Servicios del hotel">Servicios del hotel</option>
+            <option value="Reserva">Hacer una reserva</option>
+            <option value="Otro">Otro</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="mensaje">Mensaje *</label>
+          <textarea 
+            id="mensaje" 
+            name="mensaje" 
+            required 
+            placeholder="Cuéntanos tu consulta..."
+            minlength="10"
+          ></textarea>
+          <small>Mínimo 10 caracteres</small>
+        </div>
+
+        <div class="form-group">
+          <div class="checkbox-group">
+            <input 
+              type="checkbox" 
+              id="privacidad" 
+              name="privacidad" 
+              required
+            >
+            <label for="privacidad">
+              Acepto la <a href="/privacy.html" target="_blank">política de privacidad</a> *
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="checkbox-group">
+            <input 
+              type="checkbox" 
+              id="newsletter" 
+              name="newsletter"
+            >
+            <label for="newsletter">
+              Deseo recibir ofertas especiales y novedades de Hotel Diva
+            </label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-submit" id="submitBtn">
+          Enviar consulta
+        </button>
+      </form>
+
+      <div class="contact-info">
+        <h3>También puedes contactarnos directamente:</h3>
+        <p>
+          <strong>📞 WhatsApp:</strong> 
+          <a href="https://wa.me/5492235033585" target="_blank">+54 9 2235 03-3585</a>
+        </p>
+        <p>
+          <strong>📧 Email:</strong> 
+          <a href="mailto:matias@hoteldiva.com.ar">matias@hoteldiva.com.ar</a>
+        </p>
+        <p>
+          <strong>📍 Ubicación:</strong> Garay 1630, Mar del Plata, Buenos Aires
+        </p>
+        <p>
+          <strong>⏰ Atención:</strong> 24 horas (respuesta en menos de 24h)
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Anti-spam: honeypot field
+    const honeypot = document.createElement('input');
+    honeypot.type = 'text';
+    honeypot.name = 'website';
+    honeypot.style.display = 'none';
+    document.getElementById('contactForm').appendChild(honeypot);
+
+    // Validación y envío
+    document.getElementById('contactForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const form = e.target;
+      const submitBtn = document.getElementById('submitBtn');
+      const formMessage = document.getElementById('formMessage');
+      
+      // Anti-spam check
+      if (honeypot.value !== '') {
+        console.warn('Spam detected');
+        return;
+      }
+
+      // Deshabilitar botón
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Enviando...';
+
+      try {
+        // Usar Formspree (servicio gratuito para formularios)
+        const formData = new FormData(form);
+        
+        // Envío a Formspree (reemplaza tu_email con tu email real)
+        const response = await fetch('https://formspree.io/f/xyzqwert', {
+          method: 'POST',
+          body: formData,
+          headers: {
+            'Accept': 'application/json'
+          }
+        });
+
+        if (response.ok) {
+          formMessage.className = 'form-message success';
+          formMessage.textContent = '✅ ¡Mensaje enviado! Nos contactaremos en menos de 24 horas.';
+          form.reset();
+          honeypot.value = '';
+          
+          // Evento GA4
+          if (window.gtag) {
+            gtag('event', 'contact_form_submit', { 
+              'event_category': 'engagement',
+              'event_label': 'contact_page'
+            });
+          }
+
+          // Limpiar mensaje después de 5 segundos
+          setTimeout(() => {
+            formMessage.style.display = 'none';
+          }, 5000);
+        } else {
+          throw new Error('Error en envío');
+        }
+      } catch (error) {
+        formMessage.className = 'form-message error';
+        formMessage.textContent = '❌ Error al enviar. Por favor, intenta con WhatsApp o email.';
+        console.error('Error:', error);
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Enviar consulta';
+      }
+    });
+  </script>
+</body>
+</html>
