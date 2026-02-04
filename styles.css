@@ -19,7 +19,14 @@ body {
   color: #1e293b;
   line-height: 1.6;
 }
-
+main section {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 64px 24px;
+}
+details {
+  margin-bottom: 20px;
+}
 /* ================= NAVBAR ================= */
 .navbar {
   position: sticky;
