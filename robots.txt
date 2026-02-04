@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: 
 
 Sitemap: https://cosapro-hoteldiva.netlify.app/sitemap.xml
