@@ -11,11 +11,11 @@
   <meta name="keywords" content="COSAPRO 2026, alojamiento COSAPRO, hotel COSAPRO Mar del Plata, congreso salud, Hotel Diva, hospedaje Mar del Plata, alojamiento Garay, congreso provincial salud">
   <meta name="author" content="Hotel Diva Mar del Plata">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://cosapro.hoteldiva.netlif/">
-  <link rel="sitemap" href="/sitemap.xml">
+  <link rel="canonical" href="https://cosapro-hoteldiva.netlify.app/">
+  
 
   <!-- Google Analytics 4 -->
-  <link rel="preconnect" href="https://www.googletagmanager.com">
+ <link rel="preconnect" href="https://www.googletagmanager.com">
   <link rel="preconnect" href="https://www.google-analytics.com" crossorigin>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-X6E1M5VCRR"></script>
   <script>
@@ -25,15 +25,17 @@
     gtag('config', 'G-X6E1M5VCRR', { 'anonymize_ip': true });
   </script>
 
+
   <!-- Open Graph -->
   <meta property="og:title" content="Alojamiento COSAPRO 2026 | Hotel Diva Mar del Plata">
   <meta property="og:description" content="Tarifas especiales para asistentes al Congreso Provincial de Salud 2026. Cupos limitados.">
-  <meta property="og:image" content="https://cosapro.hoteldiva.netlif/assets/hero.webp">
-  <meta property="og:url" content="https://cosapro.hoteldiva.netlif/">
+  <meta property="og:image" content="https://cosapro-hoteldiva.netlify.app/assets/hero.webp">
+  <meta property="og:url" content="https://cosapro-hoteldiva.netlify.app/">
   <meta property="og:type" content="website">
 
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+
 
   <!-- Schema Hotel -->
   <script type="application/ld+json">
@@ -41,6 +43,9 @@
     "@context": "https://schema.org",
     "@type": "Hotel",
     "name": "Hotel Diva Mar del Plata",
+    "url": "https://cosapro-hoteldiva.netlify.app/",
+    "telephone": "+5492235033585",
+    "description": "Hotel en Mar del Plata con tarifas especiales para asistentes al Congreso Provincial de Salud COSAPRO 2026.",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Garay 1630",
@@ -48,18 +53,22 @@
       "addressRegion": "Buenos Aires",
       "addressCountry": "AR"
     },
-    "telephone": "+5492235033585",
-    "url": "https://cosapro.hoteldiva.netlif/",
-    "description": "Hotel en Mar del Plata con tarifas especiales para asistentes al Congreso Provincial de Salud COSAPRO 2026."
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -38.0066,
+      "longitude": -57.5498
+    }
   }
   </script>
 
   <!-- Schema Evento -->
-  <script type="application/ld+json">
+   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Event",
     "name": "Congreso Provincial de Salud COSAPRO 2026",
+    "startDate": "2026-04-13",
+    "endDate": "2026-04-15",
     "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
     "eventStatus": "https://schema.org/EventScheduled",
     "location": {
@@ -75,45 +84,25 @@
   }
   </script>
 
-  <!-- Schema FAQ -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "¿Cuál es la tarifa del Hotel Diva para COSAPRO 2026?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Las tarifas especiales son: $30.000 por noche para 2 noches, $28.000 por noche para 3 noches, y $27.000 por noche para 4 noches. Incluye desayuno buffet completo."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Dónde está ubicado Hotel Diva?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Hotel Diva está ubicado en Garay 1630, Mar del Plata, Buenos Aires. Zona estratégica cerca del Paseo Aldrey y a 5 minutos del centro de la ciudad."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Qué servicios incluye el alojamiento?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Desayuno buffet, WiFi en todo el hotel, TV LED, lobby amplio, salón comedor, atención 24 horas y estacionamiento disponible."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Cómo reservo en Hotel Diva para COSAPRO 2026?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Puedes reservar contactando por WhatsApp al +54 9 2235 03-3585 o enviar un correo a matias@hoteldiva.com.ar. Los cupos son limitados."
-        }
+    "@type": "Event",
+    "name": "Congreso Provincial de Salud COSAPRO 2026",
+    "startDate": "2026-04-13",
+    "endDate": "2026-04-15",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "Mar del Plata",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Mar del Plata",
+        "addressRegion": "Buenos Aires",
+        "addressCountry": "AR"
       }
-    ]
+    }
   }
   </script>
 </head>
